@@ -1,63 +1,41 @@
-# EBS REVEST
+# EBS REVEST — Site institucional
 
-**Soluções em revestimentos técnicos para cilindros e peças industriais.**
+Site institucional da EBS REVEST (revestimento de cilindros para máquinas offset e indústrias).
+Feito com React 19, TypeScript e Vite. Estilos com Tailwind CSS (via CDN) e ícones Font Awesome.
 
-🌐 Site oficial: https://www.ebsrevest.com.br
+## Requisitos
 
-## 📌 Sobre o projeto
+- Node.js 18 ou superior
 
-O EBS REVEST é um site institucional desenvolvido para apresentar
-a empresa, divulgar suas soluções em revestimentos industriais e
-facilitar o contato com clientes e parceiros comerciais.
+## Como rodar
 
-A empresa atende os segmentos gráfico, offset e industrial,
-oferecendo serviços de revestimento de cilindros e peças em geral,
-com foco em resistência, durabilidade, precisão e desempenho.
+```bash
+npm install
+npm run dev        # ambiente de desenvolvimento em http://localhost:3000
+npm run build      # gera a pasta dist/ pronta para hospedagem
+npm run preview    # testa o build localmente
+```
 
-## 🎯 Objetivos do site
+## Estrutura
 
-- Apresentar a empresa e sua experiência no mercado.
-- Divulgar os serviços e as soluções em revestimentos técnicos.
-- Apresentar as principais especialidades da empresa.
-- Facilitar solicitações de orçamento.
-- Disponibilizar canais de contato comercial e suporte técnico.
-- Fortalecer a presença digital da marca EBS REVEST.
+```
+public/assets/        imagens, vídeo e trilha sonora (servidos como estão)
+src/
+  components/         componentes de interface (Navbar, Hero, Products, ...)
+  data/site.ts        textos, produtos, contatos e links (edite aqui)
+  styles/index.css    estilos globais
+  types/              tipos TypeScript
+  utils/whatsapp.ts   gerador de links do WhatsApp
+  App.tsx, main.tsx   composição da página e ponto de entrada
+```
 
-## 🏭 Principais soluções
+## Como editar o conteúdo
 
-### Revestimento em Borracha
-Soluções em borracha para aplicações industriais e sistemas
-de tintagem, incluindo opções de materiais para diferentes necessidades.
+- **Telefone, e-mail, endereço, redes sociais, produtos e textos de “Quem Somos”:** `src/data/site.ts`.
+- **Novas fotos:** coloque em `public/assets/images/` (de preferência em `.webp`) e referencie em `src/data/site.ts`.
 
-### Cromo Duro Espelhado
-Revestimento voltado à resistência ao desgaste e à precisão
-superficial em aplicações industriais e gráficas.
+## Hospedagem
 
-### Revestimento em Rilsan®
-Revestimento à base de poliamida para aplicações que exigem
-resistência ao desgaste e a agentes químicos.
-
-### Cromo Duro Jateado ou Fosco
-Solução para aplicações que exigem características específicas
-de superfície e desempenho em processos industriais.
-
-## 📞 Contato
-
-- **Site:** https://www.ebsrevest.com.br
-- **E-mail:** comercial@ebsrevest.com.br
-- **WhatsApp:** (11) 94715-9836 / (11) 94715-9885
-- **Localização:** São Paulo, SP
-- **Atendimento:** Clientes em todo o Brasil.
-
-## 🛠️ Tecnologias
-
-As tecnologias devem ser confirmadas de acordo com os arquivos
-do projeto. A implementação pode utilizar ferramentas como:
-
-- React
-- Vite
-- JavaScript ou TypeScript
-- HTML5
-- CSS3
-- Git e GitHub
-- Netlify para hospedagem e publicação
+Envie o **conteúdo** da pasta `dist/` (gerada por `npm run build`) para a raiz do domínio
+(por exemplo `public_html`). Os caminhos dos arquivos são absolutos (`/assets/...`), então o site
+deve ficar na raiz do domínio, e não em uma subpasta.
